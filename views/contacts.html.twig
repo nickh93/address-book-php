@@ -17,14 +17,17 @@
 
         <button type="submit">Add a Contact</button>
       </form>
+      <form action="/delete_contacts" method="post">
+        <button type="submit">delete all contacts</button>
+      </form>
       {% if contacts is not empty %}
         <h4>Your Contacts: </h4>
         <ul>
             {% for contact in contacts %}
-                <li>{{ contact.getName }}</li>
+                <li>Name: {{ contact.getName }}</li>
                 <ul>
-                    <li>{{ contact.getPhone }}</li>
-                    <li>{{ contact.getAddress }}</li>
+                    <li>Phone Number: {{ contact.getPhone }}</li>
+                    <li>Address: {{ contact.getAddress }}</li>
                 </ul>
             {% endfor %}
         </ul>
