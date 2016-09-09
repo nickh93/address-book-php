@@ -3,36 +3,52 @@
   <head>
     <meta charset="utf-8">
     <title>Contact List</title>
-    <link href="/css/bootstrap.min.css" type="text/css">
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="/css/styles.css" type="text/css" rel="stylesheet">
 
   </head>
   <body>
-    <h1>Contact List</h1>
-    <p>Add some of the people you know to this form to store tha information!</p>
-      <form action='/create_contact' method="post">
-        <label for="name">Contact Name: </label>
-        <input name="name" type="text" id="name">
-        <label for="number">Contact Phone Number: </label>
-        <input name="number" type="text" id="number">
-        <label for="address">Contact Address: </label>
-        <input name="address" type="text" id="address">
-
-        <button type="submit">Add a Contact</button>
-      </form>
-      <form action="/delete_contacts" method="post">
-        <button type="submit">delete all contacts</button>
-      </form>
-      {% if contacts is not empty %}
-        <h4>Your Contacts: </h4>
-        <ul>
-            {% for contact in contacts %}
-                <li>Name: {{ contact.getName }}</li>
-                <ul>
-                    <li>Phone Number: {{ contact.getPhone }}</li>
-                    <li>Address: {{ contact.getAddress }}</li>
-                </ul>
-            {% endfor %}
-        </ul>
-      {% endif %}
+    <div class="container">
+      <div class="row">
+        <h1>Contact List</h1>
+        <p>Add some of the people you know to this form to store their information!</p>
+      </div>
+        <form action='/create_contact' method="post">
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Contact Name: </label>
+              <div class="col-sm-10">
+                <input name="name" type="text" id="name" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="number" class="col-sm-2 col-form-label">Contact Phone Number: </label>
+              <div class="col-sm-10">
+                <input name="number" type="text" id="number" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="address" class="col-sm-2 col-form-label">Contact Address: </label>
+              <div class="col-sm-10">
+                <input name="address" type="text" id="address" class="form-control">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Add a Contact</button>
+        </form>
+        <form action="/delete_contacts" method="post">
+          <button type="submit" class="btn btn-danger">delete all contacts</button>
+        </form>
+        {% if contacts is not empty %}
+          <h4>Your Contacts: </h4>
+          <ul>
+              {% for contact in contacts %}
+                  <li>Name: {{ contact.getName }}</li>
+                  <ul>
+                      <li>Phone Number: {{ contact.getPhone }}</li>
+                      <li>Address: {{ contact.getAddress }}</li>
+                  </ul>
+              {% endfor %}
+          </ul>
+        {% endif %}
+    </div>
   </body>
 </html>
