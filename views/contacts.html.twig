@@ -49,10 +49,12 @@
           <h4>Your Contacts: </h4>
           <ul>
               {% for contact in contacts %}
-                  <li>Name: {{ contact.getName }}</li>
+                  <li class="name">Name: {{ contact.getName }}</li>
                   <ul>
+                    <div class="attributes">
                       <li>Phone Number: {{ contact.getPhone }}</li>
                       <li>Address: {{ contact.getAddress }}</li>
+                    </div>
                   </ul>
               {% endfor %}
           </ul>

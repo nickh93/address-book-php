@@ -1,0 +1,18 @@
+body{
+  background-color: #FEFCB6;
+}
+
+.name {
+  display: inline-block;
+  background-color: #8C8F92;
+  color: white;
+  border-radius: 5px;
+
+}
+
+.attributes {
+  background-color: #91CBC9;
+  color: white;
+  border-radius: 5px;
+  display: inline-block;
+}
